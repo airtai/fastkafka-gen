@@ -98,7 +98,7 @@ def _get_relevant_document(query: str) -> str:
         The content of the most relevant document as a string.
     """
     db_path = get_root_data_path() / "docs"
-    db = FAISS.load_local(db_path, OpenAIEmbeddings())
+    db = FAISS.load_local(db_path, OpenAIEmbeddings()) # type: ignore
     results = db.max_marginal_relevance_search(query, k=1, fetch_k=3)
     results_str = "\n".join([result.page_content for result in results])
     return results_str

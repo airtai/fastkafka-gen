@@ -19,7 +19,7 @@ repos:
     args: ["-r", "faststream_gen"]
 
 - repo: https://github.com/returntocorp/semgrep
-  rev: "v1.14.0"
+  rev: "v1.61.1"
   hooks:
     - id: semgrep
       name: Semgrep 
